@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Quiz</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" 
+        type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                background-color:slategrey;
+            }
+            #hint1, #hint2, #hint3, #WrongAlert1, #RightAlert1, #WrongAlert2, #RightAlert2, #WrongAlert3, #RightAlert3{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid" style="background-color: green; border: solid; border-top:red; border-radius: 30px">
+            <h1 style="color:darkslategrey; text-align: center"><strong>Get, Set Go!</strong></h1>
+        </div>
+        <div class="container-fluid" style="background-color:white; margin: 10px; border-radius: 15px">
+            <h2>Who has been appointed as the new chairman of Central Board of Indirect taxes and Customs (CBIC)?</h2>
+            <button class="btn btn-primary btn-sm"  onclick="hintUp(hint1)">hint</button>
+            <div id="hint1" class="alert alert-warning alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Hint!</strong> Sorry! there is no hint for this quesion.
+            </div>
+            <div>
+                <label><input type="radio" id="radio11" name="optradio">Johnjoseph</label>
+            </div>
+            <div>
+                <label><input type="radio" id="radio12" name="optradio">S Ramesh</label>
+            </div>
+            <div id="WrongAlert1" class="alert alert-danger alert-dismissible">   
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Wrong!</strong> OOPS, this is not the right answer.    
+            </div>
+            <div id="RightAlert1" class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Correct!</strong> Brillant!!, this is the right answer.
+            </div>
+            <h2>Who has been appointed as the acting Chairman of the Union Public Service Commission (UPSC)? </h2>
+            <button class="btn btn-primary btn-sm" onclick="hintUp(hint2)">hint</button>
+            <div id="hint2" class="alert alert-warning alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <p><strong>Hint!</strong> Sorry! there is no hint for this quesion.</p>
+            </div>
+            <div>
+                <label><input type="radio"  id="radio21" name="optradio1">ArvindSaxena</label>
+            </div>
+            <div>
+                <label><input type="radio" id="radio22" name="optradio1">SudhaJain</label>
+            </div>
+            <div id="WrongAlert2" class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Wrong!</strong> OOPS!!, this is not the right answer.
+            </div>
+            <div id="RightAlert2" class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Correct!</strong> Brillant!!, this is the right answer.
+            </div>
+            <h2>Who is the current National Current Security Advisor to the Prime Minister? </h2>
+            <button class="btn btn-primary btn-sm" onclick="hintUp(hint3)">hint</button>
+            <div id="hint3" class="alert alert-warning alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <p><strong>Hint!</strong> He is the person who organised URI attack.</p>
+            </div>
+            <div>
+                <label><input type="radio"  id="radio31" name="optradio2">E.S.L Narasimhan</label>
+            </div>
+            <div>
+                <label><input type="radio" id="radio32" name="optradio2">Ajit Doval</label>
+            </div>
+            <div id="WrongAlert3" class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Wrong!</strong> OOPS, this is not the right answer.
+            </div>
+            <div id="RightAlert3" class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Correct!</strong> Brillant!!, this is the right answer.
+            </div>
+        </div>
+        <div class="container-fluid">
+            <button onclick="myEvaluate()" class="btn btn-primary btn-sm">Submit</button>
+        </div>
+        <script>
+            function myEvaluate() {
+                if (document.getElementById("radio11").checked) {
+                    document.getElementById("WrongAlert1").style.display="block";
+                } else if (document.getElementById("radio12").checked) {
+                    document.getElementById("RightAlert1").style.display="block";
+                }
+                if (document.getElementById("radio21").checked) {
+                    document.getElementById("RightAlert2").style.display="block";
+                } else if (document.getElementById("radio22").checked) {
+                    document.getElementById("WrongAlert2").style.display="block";
+                }
+                if (document.getElementById("radio31").checked) {
+                    document.getElementById("WrongAlert3").style.display="block";
+                } else if (document.getElementById("radio32").checked) {
+                    document.getElementById("RightAlert3").style.display="block";
+                }
+            }
+            function hintUp(hint) {
+                if (hint==hint1) {
+                    document.getElementById("hint1").style.display="block";
+                } else if (hint==hint2) {
+                    document.getElementById("hint2").style.display="block";
+                } else {
+                    document.getElementById("hint3").style.display="block";
+                }
+            }
+        </script>
+    </body>
+</html>
